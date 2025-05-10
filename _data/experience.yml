@@ -4,10 +4,22 @@
   duration: Jan, 2017 &mdash; Present
   summary: As Solution Architect, I am responsible for the reference architecture and reference implementation needed to sustain the business.
     Define and evolve a go-forward architecture, software development standards, security standards and process improvement efforts, with focus on
-    those that involve new and innovative technologies.
+    those that involve new and innovative technologies.  I lead the evolution of enterprise and domain-level architectures, ensuring alignment with 
+    business objectives, scalability, and performance goals.
 
     <ul class="resume-item-list">
-    <li>Specify and design solutions that add value and efficiency to business areas and systems.</li>
+    <li><strong>Led the architecture and technical direction</strong> of a multi-regional, distributed sourcing platform, resulting in a 40% improvement in system scalability and uptime exceeding 99.99%.</li>
+    <li><strong>Migrated monolithic legacy systems to AWS microservices</strong>, achieving a 60% reduction in deployment time and increasing feature delivery velocity.</li>
+    <li><strong>Implemented event-driven patterns (Kafka, SNS/SQS)</strong> that decoupled critical services and improved system resiliency during peak transaction volumes</li>
+    <li><strong>Established architecture review processes and design standards</strong>, ensuring alignment across global development teams and improving code quality and reusability.</li>
+    <li><strong>Established architecture review processes and design standards</strong>, ensuring alignment across global development teams and improving code quality and reusability.</li>
+    <li><strong>Collaborated with cross-functional teams including Product, Security, and DevOps</strong> to drive business-aligned architectural decisions and system optimizations.</li>
+    <li><strong>Designed and deployed secure, high-performance APIs</strong>, enabling seamless integration with internal and external partners and reducing integration onboarding time by 35%.</li>
+    <li><strong>Covered Enterprise Architecture functions</strong>, maintaining system and application architecture documentation in LeanIX, improving transparency and governance across IT landscapes.</li>
+    <li><strong>Aligned architectural roadmaps with enterprise strategy</strong>, working closely with business stakeholders to ensure long-term scalability and compliance.</li>
+    <li><strong>Established architecture review processes and design standards</strong>, fostering consistency across global teams and enhancing reusability</li>
+    <li><strong>Mentored and coached developers and junior architects</strong>, building a knowledge-sharing culture and supporting professional development within the engineering organization.</li>
+    <li><strong>Specify and design solutions</strong>, that add value and efficiency to business areas and systems.</li>    
     <li>Evaluate and undertake impact analyses on major design options and assess associated risks.</li>
     <li>Collaborate closely with technology system and team leads in determining optimal solutions to product goals and aligning system/architecture roadmaps to product plans.</li>
     <li>Actively engage with engineering teams in the development and implementation of solutions designed, providing guidance on solution approach, technical best practices, and business priorities.</li>
@@ -27,19 +39,15 @@
   summary: Provide solutions in areas of disaster recovery, data integrity and security, design and analysis of software projects.
 
     <ul class="resume-item-list">
+    <li>Developed and maintained core services in the Distribution and Master Data domains, supporting millions of daily data transactions.</li>
+    <li>Refactored legacy Java-based components into modular services using Spring Boot and Docker, improving maintainability and deployment agility.</li>
+    <li>Built internal libraries and frameworks to accelerate API development and standardize error handling, reducing defect rates in new features.</li>
+    <li>Worked closely with data and content teams to integrate catalog and sourcing logic into external partner systems via secure REST APIs and messaging patterns</li>
+    <li>Conducted performance tuning and memory profiling across services, achieving up to 30% faster response times in high-load environments.</li>
     <li>Design the interaction between systems, restrictions on the use of platforms and tools.</li>
     <li>Set global standards shared between supervised systems.</li>
     <li>Ensure that all solutions, usually composed of many infrastructure elements and software, works well with each other.</li>
     <li>Diagnose the whole system, understand all interactions between components on a given level of abstraction, as well as to define limitations and requirements for source code.</li>
-    <li>Knowledges about non-functional requirements to the system and how does the architecture reflect them, what components are in the system and what are their responsibilities, what are the interfaces and available connections between components, what kind of technologies, standards and limitations are used to create the application.</li>
-    <li>Knowledges about high availability systems, scalability and service-oriented programming.</li>
-    <li>Knowledges about Non-relational databases as (Redis for centralised cache), MongoDB, Cassandra, Elasticsearch. EhCache, Guava, Ignite.</li>
-    <li>Knowledges about relational databases as PostgreSQL, MySQL, Oracle 11g.</li>
-    <li>Knowledges about micro-services patterns, Spring boot and Spring Cloud Netflix, Spring Cloud Config server and client-side for externalised configuration in a distributed system, Service Discovery (Eureka, Consul), Circuit Breaker (Hystrix), Intelligent Routing (Zuul) and Client-Side Load Balancing (Ribbon).</li>
-    <li>Knowledges about Amazon Web Service (S3, EC2, SES, Route 53, VPC).</li>
-    <li>Knowledges about metrics systems as Datadog, Ganglia, Grafana.</li>
-    <li>Knowledges about log management platform and ELK</li>
-    <li>Development of a maven archetype for microservice-oriented applications using Spring Cloud Netflix.</li>
     </ul>
 
 - company: Onwhyon

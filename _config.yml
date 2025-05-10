@@ -11,7 +11,7 @@ sass:
 # Resume settings
 resume_avatar:                  "true"
 resume_name:                    "Carlos José Requena Jiménez"
-resume_title:                   "Software Engineer"
+resume_title:                   "Lead Senior Solutions Architect"
 
 # used for the contact button in _layouts/resume.html
 resume_contact_email:           "cjrequena@outlook.es"
@@ -23,7 +23,15 @@ resume_contact_address:         "742 Evergreen Terrace, Springfield"
 resume_header_contact_info:     "742 Evergreen Terrace, Springfield • 555-7334 • lisasimpson@youremailaddress.com"
 display_header_contact_info:    "false"
 
-resume_header_intro: "<p>Software Engineer and IT Solution Architect result-oriented and focused on delivering results. Skilled in cloud computing, distributed systems, software architecture, microservices, event-driven architecture, design patterns, software development, TDD, DevOps. Demonstrated mastery in evaluating requirements for business application integration and service activation. Proven mentoring and training with expertise in communicating across organizational levels and with cross-functional teams to drive the shared vision and foster a culture of excellence.</p>"
+resume_header_intro:
+  "<p>
+  Strategic and hands-on Senior Solutions Architect with over 15 years of experience designing and leading the delivery of 
+  scalable, distributed, and event-driven systems in cloud environments (AWS). Specialized in architecting microservices, 
+  real-time integration solutions, and high-availability systems for global enterprise domains such as Offer Management, 
+  Sourcing, and Master Data. Proven ability to translate complex business challenges into pragmatic and resilient technical 
+  architectures. Experienced in mentoring engineering teams, defining architectural standards, and driving cloud modernization 
+  initiatives. Passionate about leveraging emerging technologies like Blockchain and AI to shape the future of software architecture.
+  </p>"
 
 # use "yes" to display the email contact button,
 # "no" to display an "I'm not looking for work" message,
@@ -39,9 +47,9 @@ resume_section_courses:         true
 resume_section_projects:        false
 resume_section_skills:          true
 resume_section_recognition:     false
-resume_section_links:           true
+resume_section_links:           false
 resume_section_associations:    false
-# resume_section_interests:       true
+resume_section_interests:       false
 
 # Resume social links
 # uncomment the options you wish to display, and add your own URL
