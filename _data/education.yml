@@ -1,12 +1,11 @@
-- degree: Electronic Engineer
-  uni: UNEXPO - Universidad Nacional Experimental Politécnica Antonio José de Sucre
-  year: Mar, 2009 &mdash; Mar, 2005
-  summary: Study the electromagnetic phenomena of materials for their application in the design, manufacture, analysis, operation and repair of
-    devices and systems as a means of improving, processing and transmitting information. Analogous tasks to the Electrical Engineer, but
-    specialised in Telecommunications, Digital Electronics, Computers, Radars, Bioelectronics, Industrial Controls, Acoustics.
-
-- degree: MBA (Master in business administration)
-  uni:  <a href=www.eude.es> EUDE </a>
+- degree: MBA (Master in Business Administration)
+  uni: <a href="https://www.eude.es">EUDE Business School</a>
   year: 2010 &mdash; 2011
-  summary: Specialisations in accounting, business strategies, decision sciences, economics, entrepreneurship, finance, general management, human
-    resources, international business, marketing, organisational behaviour, Project management, Operations management.
+  summary: >
+    Business strategy, finance, general management, project management, and operations management.
+
+- degree: Electronic Engineer
+  uni: UNEXPO &mdash; Universidad Nacional Experimental Politécnica Antonio José de Sucre
+  year: Mar, 2005 &mdash; Mar, 2009
+  summary: >
+    Telecommunications, digital electronics, computing, industrial controls, and signal processing.

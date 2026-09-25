@@ -1,28 +1,43 @@
-- skill: AWS Amazon Web Services
-  description: <a href="https://aws.amazon.com/what-is-aws/?nc1=h_ls">Cloud computing with AWS</a>
+# Skills — mirrors the TECHNICAL EXPERTISE section of solutions-architect-resume.md
 
-- skill: DevOps
-  description: Dockers, Vagrant, Ansible, CloudFormation, Terraform, Gitlab CI, Jenkins, AWS, Datadog, etc.
+- skill: Architecture &amp; Design
+  description: >
+    Microservices &bull; Hexagonal Architecture (Ports &amp; Adapters) &bull; CQRS &bull; Event Sourcing &bull;
+    Domain-Driven Design (aggregates, value objects, domain events) &bull; Event-Driven Architecture &bull;
+    API-First &amp; Versioned REST Design &bull; Multi-Tenancy &amp; Tenant Isolation &bull;
+    Saga / Compensating Transactions &bull; Idempotency &amp; Optimistic Concurrency &bull; Backend-for-Frontend &bull;
+    High Availability, Resilience &amp; Graceful Degradation
 
-- skill: Software Engineering and Architecture
-  description: Microservice architecture, Event-Driven architecture, SOA Architecture (Web Services, RMI), Design Patterns, High Availability Systems,
-    Distributed Systems, Blockchain, Autoscaling, Monitoring, Cloud Computing.
+- skill: AWS &amp; Infrastructure as Code
+  description: >
+    ECS Fargate &bull; API Gateway &bull; Lambda &bull; RDS PostgreSQL &amp; RDS Proxy &bull; ElastiCache Redis &bull;
+    MSK / Managed Kafka &bull; Cognito (OIDC/JWT, custom claims, M2M client credentials) &bull; S3 &bull;
+    Secrets Manager &bull; CloudWatch &bull; VPC &amp; Network Segmentation &bull;
+    Application Load Balancer &amp; Auto Scaling &bull; Organizations, SCPs &amp; IAM Identity Center &bull;
+    Multi-Account Landing Zones &bull; Terraform (reusable modules, thin per-environment root stacks,
+    remote-state composition) &bull; Docker &bull; Ansible
 
-- skill: Database
-  description: Oracle, Sybase, MySQL, PL/SQL, SQL Anywhere, SQL Server 2000, Postgres, DB2, Pro*C, OCCI
+- skill: Engineering &amp; Delivery
+  description: >
+    Java 21 &bull; Spring Boot 3.5 &bull; Spring Cloud Stream &bull;
+    Spring Security (OAuth2 Resource Server, method security) &bull; Spring Data JPA / Hibernate &bull; OpenAPI &bull;
+    Micrometer &amp; Distributed Tracing &bull; Maven (shared parent POMs, published libraries) &bull; Python &bull;
+    TypeScript &bull; Next.js (App Router, SSR / React Server Components) &bull; React &bull;
+    GitLab CI (parent/child pipelines, path-based change gating, DAG orchestration) &bull;
+    OIDC Keyless Cloud Authentication &bull; Plan-then-Apply Governance &bull;
+    Promotion Gates (test &rarr; staging &rarr; production) &bull; Trunk-Based Development
 
-- skill: Software Development
-  description:
-    <ul class="resume-item-list">
-    <li>Object oriented programming (Java, C/C++, Groovy, Grails, Python)</li>
-    <li>Java enterprise applications JEE (JMS, MDB, EJB, JDBC, Servicios Web, RMI, MVC)</li>
-    <li>Frameworks (Spring Framework, Spring Boot, Spring Cloud, Spring Batch Spring WebFlow, Spring Security, Spring Web Services, JSF, MyFaces, IceFaces)</li>
-    <li>Frameworks ORM (Hibernate3, Ibatis, MyBatis, JDO, JPA, spring-data)</li>
-    <li>Application servers (WebLogic, JBoss, WebPhere, Geronimo, Sun Glassfish, OC4J, Tomcat (Web Server)</li>
-    <li>Apache Maven, Apache Ant</li>
-    <li>Scripting Languages (JAVASCRIPT, JQUERY, EXTJS, JSON, DOJO, AJAX, TAGSLIBS)</li>
-    <li>Versions control  (GIT, SVN, CVS)</li>
-    <li>Agile development methodologies (Scrum, Extreme Programming), Unified Modeling Language  (UML)	Markup Languages (XML, XSL, DTS, XHTML, HTML, VXML, JAXB, JAX, XPATH) </li>
-    </ul>
+- skill: Data &amp; Messaging
+  description: >
+    PostgreSQL (Row-Level Security, GiST exclusion constraints, PostGIS, transaction-scoped tenant context) &bull;
+    Event Store Design (append-only log, snapshots, durable subscription offsets) &bull; Apache Kafka / MSK &bull;
+    CloudEvents &bull; Dead-Letter Queues &amp; Replay Strategies &bull; Redis Caching &bull;
+    Schema Migration Governance (Flyway) &bull; Data Modeling for Multi-Tenant Systems
 
-
+- skill: Security &amp; Quality Engineering
+  description: >
+    OAuth 2.0 / OIDC &bull; JWT &amp; Claim-Based Authorization &bull; RBAC &amp; Fine-Grained Permission Models &bull;
+    Database-Enforced Tenant Isolation &bull; Least-Privilege IAM &bull; Service Control Policy Guardrails &bull;
+    Secrets Management &bull; GDPR / EU Regulatory Assessment &bull; JUnit 5 &amp; Mockito &bull;
+    Testcontainers Integration Testing &bull; Property-Based Testing &bull; Playwright &bull;
+    Load Testing (Locust) &bull; SonarQube &bull; Architecture Documentation (arc42, C4, Mermaid)

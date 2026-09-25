@@ -69,51 +69,6 @@
       {% endif %}
 
 
-      {% if site.resume_section_education %}
-      <!-- begin Education -->
-      <section class="content-section">
-        <header class="section-header">
-          <h2>Education</h2>
-        </header>
-
-        {% for education in site.data.education %}
-        <div class="resume-item" itemscope itemprop="alumniOf" itemtype="http://schema.org/CollegeOrUniversity">
-          <h3 class="resume-item-title" itemprop="name">{{ education.uni }}</h3>
-          <h4 class="resume-item-details group" itemprop="description">{{ education.degree }} &bull; {{ education.year }}</h4>
-          <h5 class="resume-item-details award-title" itemprop="description">{{ education.award }}</h5>
-          <p class="resume-item-copy" itemprop="description">
-            <ul class="resume-item-list">
-              {% for award in education.awards %}
-              <li>{{ award.award }}</li>
-              {% endfor %}
-            </ul></h5>
-
-
-          <p class="resume-item-copy">{{ education.summary }}</p>
-        </div>
-        {% endfor %}
-      </section>
-      <!-- end Education -->
-      {% endif %}
-
-      {% if site.resume_section_courses %}
-      <!-- begin Education -->
-      <section class="content-section">
-        <header class="section-header">
-          <h2>Courses and Certifications</h2>
-        </header>
-
-        {% for courses in site.data.courses %}
-        <div class="resume-item" itemscope itemprop="alumniOf" itemtype="http://schema.org/CollegeOrUniversity">
-          <h3 class="resume-item-title" itemprop="name">{{ courses.uni }}</h3>
-          <h4 class="resume-item-details group" itemprop="description">{{ courses.degree }} &bull; {{ courses.year }}</h4>
-          <p class="resume-item-copy">{{ courses.summary }}</p>
-        </div>
-        {% endfor %}
-      </section>
-      <!-- end Education -->
-      {% endif %}
-
       {% if site.resume_section_projects %}
       <!-- begin Projects -->
       <section class="content-section">
@@ -150,6 +105,71 @@
 
       </section>
       <!-- end Skills -->
+      {% endif %}
+
+      {% if site.resume_section_education %}
+      <!-- begin Education -->
+      <section class="content-section">
+        <header class="section-header">
+          <h2>Education</h2>
+        </header>
+
+        {% for education in site.data.education %}
+        <div class="resume-item" itemscope itemprop="alumniOf" itemtype="http://schema.org/CollegeOrUniversity">
+          <h3 class="resume-item-title" itemprop="name">{{ education.uni }}</h3>
+          <h4 class="resume-item-details group" itemprop="description">{{ education.degree }} &bull; {{ education.year }}</h4>
+          <h5 class="resume-item-details award-title" itemprop="description">{{ education.award }}</h5>
+          <p class="resume-item-copy" itemprop="description">
+            <ul class="resume-item-list">
+              {% for award in education.awards %}
+              <li>{{ award.award }}</li>
+              {% endfor %}
+            </ul></h5>
+
+
+          <p class="resume-item-copy">{{ education.summary }}</p>
+        </div>
+        {% endfor %}
+      </section>
+      <!-- end Education -->
+      {% endif %}
+
+      {% if site.resume_section_courses %}
+      <!-- begin Courses -->
+      <section class="content-section">
+        <header class="section-header">
+          <h2>Courses and Certifications</h2>
+        </header>
+
+        {% for courses in site.data.courses %}
+        <div class="resume-item" itemscope itemprop="alumniOf" itemtype="http://schema.org/CollegeOrUniversity">
+          <h3 class="resume-item-title" itemprop="name">{{ courses.uni }}</h3>
+          <h4 class="resume-item-details group" itemprop="description">{{ courses.degree }} &bull; {{ courses.year }}</h4>
+          <p class="resume-item-copy">{{ courses.summary }}</p>
+        </div>
+        {% endfor %}
+      </section>
+      <!-- end Courses -->
+      {% endif %}
+
+      {% if site.resume_section_languages %}
+      <!-- begin Languages -->
+      <section class="content-section">
+
+        <header class="section-header">
+          <h2>Languages</h2>
+        </header>
+
+        <div class="resume-item">
+          <ul class="resume-item-list">
+            {% for language in site.data.languages %}
+            <li itemprop="knowsLanguage">{{ language.language }} &bull; {{ language.level }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+
+      </section>
+      <!-- end Languages -->
       {% endif %}
 
       {% if site.resume_section_recognition %}

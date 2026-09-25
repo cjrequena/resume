@@ -1,5 +1,5 @@
-# links
-#- url: "#"
-#  description: Springfield Jazz Enthusiasts
-#- url: "#"
-#  description: Springfield Young Professionals
+# Links
+# Rendered only when resume_section_links is enabled in _config.yml.
+#
+# - url: "https://medium.com/@cjrequena"
+#   description: Writing on architecture and distributed systems

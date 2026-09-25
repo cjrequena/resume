@@ -11,26 +11,31 @@ sass:
 # Resume settings
 resume_avatar:                  "true"
 resume_name:                    "Carlos José Requena Jiménez"
-resume_title:                   "Lead Senior Solutions Architect"
+resume_title:                   "Solutions Architect | Enterprise Architecture & Cloud Strategy"
 
 # used for the contact button in _layouts/resume.html
 resume_contact_email:           "cjrequena@outlook.es"
 
 # the next two items are used for schema itemprops in _layouts/resume.html
-resume_contact_telephone:       "555-7334"
-resume_contact_address:         "742 Evergreen Terrace, Springfield"
+resume_contact_telephone:       "+34 669 258 306"
+resume_contact_address:         "Palma, Spain"
 
-resume_header_contact_info:     "742 Evergreen Terrace, Springfield • 555-7334 • lisasimpson@youremailaddress.com"
+resume_header_contact_info:     "Palma, Spain • +34 669 258 306 • cjrequena@outlook.es"
 display_header_contact_info:    "false"
 
 resume_header_intro:
   "<p>
-  Strategic and hands-on Senior Solutions Architect with over 15 years of experience designing and leading the delivery of 
-  scalable, distributed, and event-driven systems in cloud environments (AWS). Specialized in architecting microservices, 
-  real-time integration solutions, and high-availability systems for global enterprise domains such as Offer Management, 
-  Sourcing, and Master Data. Proven ability to translate complex business challenges into pragmatic and resilient technical 
-  architectures. Experienced in mentoring engineering teams, defining architectural standards, and driving cloud modernization 
-  initiatives. Passionate about leveraging emerging technologies like Blockchain and AI to shape the future of software architecture.
+  Solutions Architect with 15+ years in enterprise environments, hands-on across the full architectural stack:
+  event-driven and event-sourced distributed systems, CQRS and hexagonal service design, multi-tenant SaaS platforms
+  with database-enforced tenant isolation, and AWS environments defined entirely as code across a multi-account
+  organization. Equally comfortable setting the standard and writing the reference implementation &mdash; API contracts,
+  messaging semantics, deployment topology, identity and authorization models, and the CI/CD pipelines that carry them
+  to production.
+  </p>
+  <p>
+  <strong>Core stack</strong> &mdash; Java 21 / Spring Boot 3.5 &bull; AWS (ECS Fargate, RDS PostgreSQL, MSK, Cognito)
+  &bull; Terraform &bull; Apache Kafka &bull; PostgreSQL &bull; TypeScript / Next.js &bull; GitLab CI
+  &bull; Event Sourcing / CQRS &bull; Multi-Tenant SaaS
   </p>"
 
 # use "yes" to display the email contact button,
@@ -46,6 +51,7 @@ resume_section_education:       true
 resume_section_courses:         true
 resume_section_projects:        false
 resume_section_skills:          true
+resume_section_languages:       true
 resume_section_recognition:     false
 resume_section_links:           false
 resume_section_associations:    false
