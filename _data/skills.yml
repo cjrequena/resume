@@ -1,43 +1,31 @@
 # Skills — mirrors the TECHNICAL EXPERTISE section of solutions-architect-resume.md
+# Consolidated from five categories to three; over-granular parentheticals dropped.
 
 - skill: Architecture &amp; Design
   description: >
     Microservices &bull; Hexagonal Architecture (Ports &amp; Adapters) &bull; CQRS &bull; Event Sourcing &bull;
-    Domain-Driven Design (aggregates, value objects, domain events) &bull; Event-Driven Architecture &bull;
-    API-First &amp; Versioned REST Design &bull; Multi-Tenancy &amp; Tenant Isolation &bull;
-    Saga / Compensating Transactions &bull; Idempotency &amp; Optimistic Concurrency &bull; Backend-for-Frontend &bull;
-    High Availability, Resilience &amp; Graceful Degradation
+    Domain-Driven Design &bull; Event-Driven Architecture &bull; API-First &amp; Versioned REST Design &bull;
+    Multi-Tenancy &amp; Tenant Isolation &bull; Saga / Compensating Transactions &bull;
+    Idempotency &amp; Optimistic Concurrency &bull; High Availability, Resilience &amp; Graceful Degradation
 
-- skill: AWS &amp; Infrastructure as Code
+- skill: AWS, Infrastructure &amp; Delivery
   description: >
     ECS Fargate &bull; API Gateway &bull; Lambda &bull; RDS PostgreSQL &amp; RDS Proxy &bull; ElastiCache Redis &bull;
     MSK / Managed Kafka &bull; Cognito (OIDC/JWT, custom claims, M2M client credentials) &bull; S3 &bull;
-    Secrets Manager &bull; CloudWatch &bull; VPC &amp; Network Segmentation &bull;
-    Application Load Balancer &amp; Auto Scaling &bull; Organizations, SCPs &amp; IAM Identity Center &bull;
-    Multi-Account Landing Zones &bull; Terraform (reusable modules, thin per-environment root stacks,
-    remote-state composition) &bull; Docker &bull; Ansible
+    Secrets Manager &bull; CloudWatch &bull; VPC &amp; Network Segmentation &bull; ALB &amp; Auto Scaling &bull;
+    Organizations, SCPs &amp; IAM Identity Center &bull; Multi-Account Landing Zones &bull;
+    Terraform (reusable modules, thin per-environment root stacks, remote-state composition) &bull; Docker &bull;
+    Ansible &bull; GitLab CI (parent/child pipelines, path-based gating, DAG orchestration) &bull;
+    OIDC Keyless Cloud Authentication &bull; Promotion Gates &amp; Trunk-Based Development
 
-- skill: Engineering &amp; Delivery
+- skill: Engineering, Data &amp; Security
   description: >
-    Java 21 &bull; Spring Boot 3.5 &bull; Spring Cloud Stream &bull;
-    Spring Security (OAuth2 Resource Server, method security) &bull; Spring Data JPA / Hibernate &bull; OpenAPI &bull;
-    Micrometer &amp; Distributed Tracing &bull; Maven (shared parent POMs, published libraries) &bull; Python &bull;
-    TypeScript &bull; Next.js (App Router, SSR / React Server Components) &bull; React &bull;
-    GitLab CI (parent/child pipelines, path-based change gating, DAG orchestration) &bull;
-    OIDC Keyless Cloud Authentication &bull; Plan-then-Apply Governance &bull;
-    Promotion Gates (test &rarr; staging &rarr; production) &bull; Trunk-Based Development
-
-- skill: Data &amp; Messaging
-  description: >
+    Java 21 &bull; Spring Boot 3.5 (Cloud Stream, Security / OAuth2 Resource Server, Data JPA) &bull; Python &bull;
+    TypeScript &bull; Next.js (App Router, SSR / RSC) &bull; React &bull; OpenAPI &bull;
+    Micrometer &amp; Distributed Tracing &bull;
     PostgreSQL (Row-Level Security, GiST exclusion constraints, PostGIS, transaction-scoped tenant context) &bull;
-    Event Store Design (append-only log, snapshots, durable subscription offsets) &bull; Apache Kafka / MSK &bull;
-    CloudEvents &bull; Dead-Letter Queues &amp; Replay Strategies &bull; Redis Caching &bull;
-    Schema Migration Governance (Flyway) &bull; Data Modeling for Multi-Tenant Systems
-
-- skill: Security &amp; Quality Engineering
-  description: >
-    OAuth 2.0 / OIDC &bull; JWT &amp; Claim-Based Authorization &bull; RBAC &amp; Fine-Grained Permission Models &bull;
-    Database-Enforced Tenant Isolation &bull; Least-Privilege IAM &bull; Service Control Policy Guardrails &bull;
-    Secrets Management &bull; GDPR / EU Regulatory Assessment &bull; JUnit 5 &amp; Mockito &bull;
-    Testcontainers Integration Testing &bull; Property-Based Testing &bull; Playwright &bull;
-    Load Testing (Locust) &bull; SonarQube &bull; Architecture Documentation (arc42, C4, Mermaid)
+    Event Store Design (append-only log, snapshots, durable subscription offsets) &bull; Apache Kafka &bull;
+    CloudEvents &bull; Dead-Letter Queues &amp; Replay &bull; Flyway &bull; OAuth 2.0 / OIDC &bull;
+    RBAC &amp; Claim-Based Authorization &bull; Least-Privilege IAM &bull; GDPR / EU Regulatory Assessment &bull;
+    JUnit 5 &bull; Mockito &bull; Testcontainers &bull; Property-Based Testing &bull; Playwright &bull; Locust &bull;
+    SonarQube &bull; arc42, C4, Mermaid

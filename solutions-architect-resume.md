@@ -10,7 +10,7 @@ linkedin.com/in/cjrequena | github.com/cjrequena | cjrequena.com | medium.com/@c
 
 # SUMMARY
 
-Solutions Architect with 15+ years in enterprise environments, hands-on across the full architectural stack: event-driven and event-sourced distributed systems, CQRS and hexagonal service design, multi-tenant SaaS platforms with database-enforced tenant isolation, and AWS environments defined entirely as code across a multi-account organization. Equally comfortable setting the standard and writing the reference implementation — API contracts, messaging semantics, deployment topology, identity and authorization models, and the CI/CD pipelines that carry them to production.
+Solutions Architect with 15+ years in enterprise environments, working across the full architectural stack — from event-driven distributed systems and multi-tenant platform design to AWS environments defined entirely as code across a multi-account organization. Equally comfortable setting the standard and writing the reference implementation: API contracts, messaging semantics, deployment topology, identity and authorization models, and the CI/CD pipelines that carry them to production.
 
 **Core stack** — Java 21 / Spring Boot 3.5 • AWS (ECS Fargate, RDS PostgreSQL, MSK, Cognito) • Terraform • Apache Kafka • PostgreSQL • TypeScript / Next.js • GitLab CI • Event Sourcing / CQRS • Multi-Tenant SaaS
 
@@ -22,22 +22,15 @@ Solutions Architect with 15+ years in enterprise environments, hands-on across t
 
 Jan 2017 – Present
 
-*Define architecture strategy for global sourcing and integration platforms, own the reference architecture and reference implementation needed to sustain the business, and evolve software development standards, security standards and process improvement efforts — with a focus on new and innovative technologies. Lead the evolution of enterprise and domain-level architectures, ensuring alignment with business objectives, scalability, and performance goals.*
+* Defined architecture strategy for the global sourcing and integration platforms behind multi-regional travel operations, sizing for high-demand seasonal workloads and setting the scalability and resilience targets delivery teams build against — 99.99% uptime and a 40% improvement in peak-load scalability across business-critical services
+* Led the decomposition of monolithic applications into AWS-native microservices with event-driven integration — service boundaries, ownership model, deployment topology, and automated release paths — cutting deployment time by 60% and improving delivery throughput
+* Established asynchronous messaging standards on Kafka and SNS/SQS — event contracts, consumer isolation, failure handling, and replay — removing synchronous coupling between domains and containing the blast radius of downstream outages
+* Introduced event sourcing as the persistence model for the booking domain — append-only event tables in PostgreSQL with snapshotting and durable subscription offsets, CloudEvents-typed events published to Kafka for downstream distribution — giving a complete audit trail of every booking state transition and letting new read models be projected from history without touching the write side
+* Owned architecture governance adopted across multiple global teams: design reviews, security and development standards, reusable integration patterns, and versioned REST contracts with backward-compatibility rules that let consuming teams evolve independently of provider release cycles — with the application landscape and its dependencies tracked in LeanIX
+* Influenced technical direction across Product, Engineering, Security, and DevOps, translating enterprise strategy into concrete platform decisions and making their operational and security implications explicit to non-technical stakeholders
+* Mentored engineers and architects through design reviews, pairing on architectural decisions, and written guidance
 
-* Defined architecture strategy for global sourcing and integration platforms supporting multi-regional travel operations, sizing the platform for high-demand seasonal workloads and setting the scalability and resilience targets the delivery teams build against
-* Led the decomposition of monolithic applications into AWS-native microservices with event-driven integration — defining service boundaries, ownership model, deployment topology, and automated release paths — reducing deployment time by 60% and improving engineering delivery throughput
-* Architected high-availability distributed systems achieving 99.99% uptime and improving peak-load scalability by 40% across business-critical services
-* Established architecture governance practices — design reviews, architecture standards, reusable integration patterns, and engineering best practices — adopted across multiple global teams
-* Influenced technical direction across Product, Engineering, Security, and DevOps organizations, translating enterprise strategy into concrete platform decisions and making the operational and security implications of those decisions explicit to non-technical stakeholders
-* Established asynchronous messaging standards on Kafka and SNS/SQS — event contracts, consumer isolation, failure handling, and replay — removing synchronous coupling between domains, improving resilience and scalability, and containing the blast radius of downstream outages
-* Defined API and integration strategy for platform services, standardizing REST contracts, versioning, and backward-compatibility rules so consuming teams could evolve independently of provider release cycles
-* Maintained enterprise architecture documentation and application landscape governance using LeanIX, improving transparency, dependency visibility, and alignment across IT domains
-* Evaluated architectural trade-offs, scalability risks, and long-term platform evolution strategies — including cost, operability, and migration effort — to support sustainable business growth
-* Mentored engineers and architects through design reviews, pairing on architectural decisions, and written guidance, contributing to technical leadership development across teams
-
-### Environment
-
-AWS • Kafka • SNS/SQS • Java • Spring Boot • REST APIs • Microservices • Distributed Systems • CI/CD • LeanIX
+*Java 21 · Spring Boot 3.5 · AWS ECS Fargate · RDS PostgreSQL · MSK / Apache Kafka · SNS/SQS · Cognito · Terraform · GitLab CI · REST APIs · LeanIX*
 
 ---
 
@@ -45,54 +38,50 @@ AWS • Kafka • SNS/SQS • Java • Spring Boot • REST APIs • Microservic
 
 Sep 2015 – Jan 2017
 
-*Provided solutions in the areas of disaster recovery, data integrity and security, and led the design and analysis of software projects across high-availability travel distribution platforms.*
+* Designed and scaled backend services processing millions of daily transactions across high-availability travel distribution platforms, sized for peak distribution load, including disaster recovery and data-integrity design
+* Led modernization of legacy systems into modular microservices, defining service decomposition, data ownership, and integration contracts
+* Improved platform performance by up to 30% by targeting structural bottlenecks — call topology, data access paths, and caching strategy — rather than isolated code tuning
 
-* Designed and scaled backend services processing millions of daily transactions across high-availability travel distribution platforms, sized for peak distribution load
-* Led modernization of legacy systems into modular microservices-based architectures, defining service decomposition, data ownership, and integration contracts to improve scalability and maintainability
-* Improved platform performance by up to 30% through architectural optimization and distributed system enhancements, targeting the structural bottlenecks — call topology, data access paths, and caching strategy — rather than isolated code tuning
-* Defined reusable frameworks, integration standards, and development practices, giving multiple teams a common foundation and improving engineering consistency and delivery efficiency
-* Collaborated with engineering and business stakeholders to prioritize architectural investment and support scalable platform evolution
-
-### Environment
-
-Java • Spring • REST APIs • Microservices • Distributed Systems • High Availability
+*Java · Spring · REST APIs · High Availability*
 
 ---
 
-## Application Architect — Onwhyon
+# SELECTED WORK
 
-Nov 2014 – Jun 2015
+**Jaspe** — multi-tenant SaaS booking and business-management platform for service businesses · jaspe.io
+*Personal platform project: reference architecture and proof-of-concept implementation.*
 
-*Lead architect for Bankia Indicex, a public self-assessment platform scoring a website's digital maturity across eight behavioural areas.*
+* Designed an eight-service event-driven architecture on Kafka — identity, business, availability, orchestrator, booking, payment, customer, and notification — with explicit criteria separating direct, orchestrated, and event-driven integration
+* Enforced scheduling correctness in PostgreSQL rather than application code: GiST exclusion constraints over `daterange` / `tstzrange` (with `btree_gist` for UUID and enum equality) make overlapping location hours, staff working hours, staff absences, and asset maintenance windows unrepresentable
+* Specified Row-Level Security tenant isolation for the business and availability services, scoping tenants at the database rather than in queries, and built the business service proof of concept in Java / Spring Boot with Flyway-managed migrations
 
-* Architected Bankia Indicex, scoring websites across eight digitalization areas — SEO, usability, content, digital marketing, social networking, web analytics, e-commerce, and mobility — into a single end-user report
-* Designed the three-stage processing pipeline: crawler-based extraction of page structure, links, and metadata; parallel enrichment through a thread pool against ~10 third-party APIs (SEMrush, PageSpeed, W3C, Klout, and the major social platforms); and scored report generation — accounting for rate limits, partial failures, and highly variable source data quality
-* Improved reporting scalability and integration reliability for multi-source analytical workloads, reducing the operational cost of onboarding each additional data source
-
-### Environment
-
-Java • Spring 4 • Spring Data / JPA • REST APIs • AngularJS • MySQL • Web Crawling • Third-Party API Integration
+*Java · Spring Boot · PostgreSQL · Apache Kafka · Flyway · Hexagonal Architecture · Multi-Tenant SaaS*
 
 ---
 
-## Senior Consultant / Software Architect — Trentiserv
+# TECHNICAL EXPERTISE
 
-Apr 2010 – Nov 2014
+### Architecture & Design
 
-*Delivered architecture and consulting for enterprise banking and financial platforms, ensuring the viability of systems against the business characteristics of each customer and advising on integration strategy and long-term maintainability.*
+Microservices • Hexagonal Architecture (Ports & Adapters) • CQRS • Event Sourcing • Domain-Driven Design • Event-Driven Architecture • API-First & Versioned REST Design • Multi-Tenancy & Tenant Isolation • Saga / Compensating Transactions • Idempotency & Optimistic Concurrency • High Availability, Resilience & Graceful Degradation
 
-* Delivered architecture solutions for enterprise banking systems, including SEPA-related platforms and financial integrations, working within strict correctness, traceability, and regulatory constraints
-* Designed high-throughput systems for processing large volumes of financial and transactional data, with emphasis on data integrity, reconciliation, and predictable behaviour under batch and peak load
-* Advised stakeholders on scalability, integration strategy, and architectural decision-making for enterprise platforms
-* Collaborated with technical and business teams to deliver resilient and maintainable financial systems
+### AWS, Infrastructure & Delivery
 
-### Environment
+ECS Fargate • API Gateway • Lambda • RDS PostgreSQL & RDS Proxy • ElastiCache Redis • MSK / Managed Kafka • Cognito (OIDC/JWT, custom claims, M2M client credentials) • S3 • Secrets Manager • CloudWatch • VPC & Network Segmentation • ALB & Auto Scaling • Organizations, SCPs & IAM Identity Center • Multi-Account Landing Zones • Terraform (reusable modules, thin per-environment root stacks, remote-state composition) • Docker • Ansible • GitLab CI (parent/child pipelines, path-based gating, DAG orchestration) • OIDC Keyless Cloud Authentication • Promotion Gates & Trunk-Based Development
 
-Enterprise Integration • Financial Systems • High-Throughput Processing • Distributed Architectures
+### Engineering, Data & Security
+
+Java 21 • Spring Boot 3.5 (Cloud Stream, Security / OAuth2 Resource Server, Data JPA) • Python • TypeScript • Next.js (App Router, SSR / RSC) • React • OpenAPI • Micrometer & Distributed Tracing • PostgreSQL (Row-Level Security, GiST exclusion constraints, PostGIS, transaction-scoped tenant context) • Event Store Design (append-only log, snapshots, durable subscription offsets) • Apache Kafka • CloudEvents • Dead-Letter Queues & Replay • Flyway • OAuth 2.0 / OIDC • RBAC & Claim-Based Authorization • Least-Privilege IAM • GDPR / EU Regulatory Assessment • JUnit 5 • Mockito • Testcontainers • Property-Based Testing • Playwright • Locust • SonarQube • arc42, C4, Mermaid
 
 ---
 
 # EARLIER EXPERIENCE
+
+**Application Architect** — Onwhyon · Nov 2014 – Jun 2015
+Lead architect for Bankia Indicex, a public website-maturity scoring platform: crawler-based extraction feeding parallel enrichment against ~10 third-party APIs (Java, Spring 4, AngularJS, MySQL).
+
+**Software Architect** — Trentisa · Apr 2010 – Nov 2014
+Architecture for enterprise banking and SEPA platforms — direct debit, mandates, receipts and transfers — for clients including Bank of Santander and LeasePlan; high-throughput financial data processing with reconciliation and data-integrity constraints under regulatory requirements.
 
 **Software Developer** — Virtual Desk · Sep 2009 – Apr 2010
 Distributed architecture solutions, technology selection, and code reviews (ZKOSS, Spring 2.5, Hibernate/JPA, Oracle 10g).
@@ -105,30 +94,6 @@ Middleware for Movistar post-paid transaction and account activation systems.
 
 **Software Developer** — Imolko, Caracas · Jan 2006 – Jan 2008
 Web and business components for SMS-based platforms (Java, Web Services / SOA, SMPP).
-
----
-
-# TECHNICAL EXPERTISE
-
-### Architecture & Design
-
-Microservices • Hexagonal Architecture (Ports & Adapters) • CQRS • Event Sourcing • Domain-Driven Design (aggregates, value objects, domain events) • Event-Driven Architecture • API-First & Versioned REST Design • Multi-Tenancy & Tenant Isolation • Saga / Compensating Transactions • Idempotency & Optimistic Concurrency • Backend-for-Frontend • High Availability, Resilience & Graceful Degradation
-
-### AWS & Infrastructure as Code
-
-ECS Fargate • API Gateway • Lambda • RDS PostgreSQL & RDS Proxy • ElastiCache Redis • MSK / Managed Kafka • Cognito (OIDC/JWT, custom claims, M2M client credentials) • S3 • Secrets Manager • CloudWatch • VPC & Network Segmentation • Application Load Balancer & Auto Scaling • Organizations, SCPs & IAM Identity Center • Multi-Account Landing Zones • Terraform (reusable modules, thin per-environment root stacks, remote-state composition) • Docker • Ansible
-
-### Engineering & Delivery
-
-Java 21 • Spring Boot 3.5 • Spring Cloud Stream • Spring Security (OAuth2 Resource Server, method security) • Spring Data JPA / Hibernate • OpenAPI • Micrometer & Distributed Tracing • Maven (shared parent POMs, published libraries) • Python • TypeScript • Next.js (App Router, SSR / React Server Components) • React • GitLab CI (parent/child pipelines, path-based change gating, DAG orchestration) • OIDC Keyless Cloud Authentication • Plan-then-Apply Governance • Promotion Gates (test → staging → production) • Trunk-Based Development
-
-### Data & Messaging
-
-PostgreSQL (Row-Level Security, GiST exclusion constraints, PostGIS, transaction-scoped tenant context) • Event Store Design (append-only log, snapshots, durable subscription offsets) • Apache Kafka / MSK • CloudEvents • Dead-Letter Queues & Replay Strategies • Redis Caching • Schema Migration Governance (Flyway) • Data Modeling for Multi-Tenant Systems
-
-### Security & Quality Engineering
-
-OAuth 2.0 / OIDC • JWT & Claim-Based Authorization • RBAC & Fine-Grained Permission Models • Database-Enforced Tenant Isolation • Least-Privilege IAM • Service Control Policy Guardrails • Secrets Management • GDPR / EU Regulatory Assessment • JUnit 5 & Mockito • Testcontainers Integration Testing • Property-Based Testing • Playwright • Load Testing (Locust) • SonarQube • Architecture Documentation (arc42, C4, Mermaid)
 
 ---
 

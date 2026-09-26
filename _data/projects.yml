@@ -1,9 +1,16 @@
-# Projects
-# Rendered only when resume_section_projects is enabled in _config.yml.
-# Add real entries here, e.g.:
-#
-# - project: Project name
-#   role: Architect & Primary Developer
-#   duration: 2024 &mdash; Present
-#   url: "https://github.com/cjrequena/..."
-#   description: One or two sentences on the problem, the architecture, and the outcome.
+# Projects — mirrors the SELECTED WORK section of solutions-architect-resume.md
+- project: Jaspe
+  role: Architect &amp; Primary Developer
+  duration: Personal platform project
+  url: "https://jaspe.io"
+  description: >
+    Multi-tenant SaaS booking and business-management platform for service-based businesses &mdash; reference
+    architecture and proof-of-concept implementation.
+
+    <ul class="resume-item-list">
+    <li>Designed an eight-service event-driven architecture on Kafka &mdash; identity, business, availability, orchestrator, booking, payment, customer, and notification &mdash; with explicit criteria separating direct, orchestrated, and event-driven integration</li>
+    <li>Enforced scheduling correctness in PostgreSQL rather than application code: GiST exclusion constraints over <code>daterange</code> / <code>tstzrange</code> (with <code>btree_gist</code> for UUID and enum equality) make overlapping location hours, staff working hours, staff absences, and asset maintenance windows unrepresentable</li>
+    <li>Specified Row-Level Security tenant isolation for the business and availability services, scoping tenants at the database rather than in queries, and built the business service proof of concept in Java / Spring Boot with Flyway-managed migrations</li>
+    </ul>
+
+    <strong>Environment:</strong> Java &bull; Spring Boot &bull; PostgreSQL &bull; Apache Kafka &bull; Flyway &bull; Hexagonal Architecture &bull; Multi-Tenant SaaS

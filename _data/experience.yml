@@ -1,81 +1,52 @@
-# Jobs
+# Jobs — mirrors the PROFESSIONAL EXPERIENCE / EARLIER EXPERIENCE sections of
+# solutions-architect-resume.md. Entries with a <ul> are the detailed roles; entries with a
+# bare summary line are the compressed tail.
 - company: TUI
   position: Solutions Architect
   duration: Jan, 2017 &mdash; Present
   summary: >
-    Define architecture strategy for global sourcing and integration platforms, own the reference architecture and
-    reference implementation needed to sustain the business, and evolve software development standards, security
-    standards and process improvement efforts &mdash; with a focus on new and innovative technologies. Lead the
-    evolution of enterprise and domain-level architectures, ensuring alignment with business objectives, scalability,
-    and performance goals.
-
     <ul class="resume-item-list">
-    <li>Defined architecture strategy for global sourcing and integration platforms supporting multi-regional travel operations, sizing the platform for high-demand seasonal workloads and setting the scalability and resilience targets the delivery teams build against</li>
-    <li>Led the decomposition of monolithic applications into AWS-native microservices with event-driven integration &mdash; defining service boundaries, ownership model, deployment topology, and automated release paths &mdash; reducing deployment time by 60% and improving engineering delivery throughput</li>
-    <li>Architected high-availability distributed systems achieving 99.99% uptime and improving peak-load scalability by 40% across business-critical services</li>
-    <li>Established architecture governance practices &mdash; design reviews, architecture standards, reusable integration patterns, and engineering best practices &mdash; adopted across multiple global teams</li>
-    <li>Influenced technical direction across Product, Engineering, Security, and DevOps organizations, translating enterprise strategy into concrete platform decisions and making the operational and security implications of those decisions explicit to non-technical stakeholders</li>
-    <li>Established asynchronous messaging standards on Kafka and SNS/SQS &mdash; event contracts, consumer isolation, failure handling, and replay &mdash; removing synchronous coupling between domains, improving resilience and scalability, and containing the blast radius of downstream outages</li>
-    <li>Defined API and integration strategy for platform services, standardizing REST contracts, versioning, and backward-compatibility rules so consuming teams could evolve independently of provider release cycles</li>
-    <li>Maintained enterprise architecture documentation and application landscape governance using LeanIX, improving transparency, dependency visibility, and alignment across IT domains</li>
-    <li>Evaluated architectural trade-offs, scalability risks, and long-term platform evolution strategies &mdash; including cost, operability, and migration effort &mdash; to support sustainable business growth</li>
-    <li>Mentored engineers and architects through design reviews, pairing on architectural decisions, and written guidance, contributing to technical leadership development across teams</li>
+    <li>Defined architecture strategy for the global sourcing and integration platforms behind multi-regional travel operations, sizing for high-demand seasonal workloads and setting the scalability and resilience targets delivery teams build against &mdash; 99.99% uptime and a 40% improvement in peak-load scalability across business-critical services</li>
+    <li>Led the decomposition of monolithic applications into AWS-native microservices with event-driven integration &mdash; service boundaries, ownership model, deployment topology, and automated release paths &mdash; cutting deployment time by 60% and improving delivery throughput</li>
+    <li>Established asynchronous messaging standards on Kafka and SNS/SQS &mdash; event contracts, consumer isolation, failure handling, and replay &mdash; removing synchronous coupling between domains and containing the blast radius of downstream outages</li>
+    <li>Introduced event sourcing as the persistence model for the booking domain &mdash; append-only event tables in PostgreSQL with snapshotting and durable subscription offsets, CloudEvents-typed events published to Kafka for downstream distribution &mdash; giving a complete audit trail of every booking state transition and letting new read models be projected from history without touching the write side</li>
+    <li>Owned architecture governance adopted across multiple global teams: design reviews, security and development standards, reusable integration patterns, and versioned REST contracts with backward-compatibility rules that let consuming teams evolve independently of provider release cycles &mdash; with the application landscape and its dependencies tracked in LeanIX</li>
+    <li>Influenced technical direction across Product, Engineering, Security, and DevOps, translating enterprise strategy into concrete platform decisions and making their operational and security implications explicit to non-technical stakeholders</li>
+    <li>Mentored engineers and architects through design reviews, pairing on architectural decisions, and written guidance</li>
     </ul>
 
-    <strong>Environment:</strong> AWS &bull; Kafka &bull; SNS/SQS &bull; Java &bull; Spring Boot &bull; REST APIs &bull; Microservices &bull; Distributed Systems &bull; CI/CD &bull; LeanIX
+    <strong>Environment:</strong> Java 21 &bull; Spring Boot 3.5 &bull; AWS ECS Fargate &bull; RDS PostgreSQL &bull; MSK / Apache Kafka &bull; SNS/SQS &bull; Cognito &bull; Terraform &bull; GitLab CI &bull; REST APIs &bull; LeanIX
 
 - company: Hotelbeds
   position: Applications Architect
   duration: Sep, 2015 &mdash; Jan, 2017
   summary: >
-    Provided solutions in the areas of disaster recovery, data integrity and security, and led the design and analysis
-    of software projects across high-availability travel distribution platforms.
-
     <ul class="resume-item-list">
-    <li>Designed and scaled backend services processing millions of daily transactions across high-availability travel distribution platforms, sized for peak distribution load</li>
-    <li>Led modernization of legacy systems into modular microservices-based architectures, defining service decomposition, data ownership, and integration contracts to improve scalability and maintainability</li>
-    <li>Improved platform performance by up to 30% through architectural optimization and distributed system enhancements, targeting the structural bottlenecks &mdash; call topology, data access paths, and caching strategy &mdash; rather than isolated code tuning</li>
-    <li>Defined reusable frameworks, integration standards, and development practices, giving multiple teams a common foundation and improving engineering consistency and delivery efficiency</li>
-    <li>Collaborated with engineering and business stakeholders to prioritize architectural investment and support scalable platform evolution</li>
+    <li>Designed and scaled backend services processing millions of daily transactions across high-availability travel distribution platforms, sized for peak distribution load, including disaster recovery and data-integrity design</li>
+    <li>Led modernization of legacy systems into modular microservices, defining service decomposition, data ownership, and integration contracts</li>
+    <li>Improved platform performance by up to 30% by targeting structural bottlenecks &mdash; call topology, data access paths, and caching strategy &mdash; rather than isolated code tuning</li>
     </ul>
 
-    <strong>Environment:</strong> Java &bull; Spring &bull; REST APIs &bull; Microservices &bull; Distributed Systems &bull; High Availability
+    <strong>Environment:</strong> Java &bull; Spring &bull; REST APIs &bull; High Availability
 
 - company: Onwhyon
   position: Applications Architect
   duration: Nov, 2014 &mdash; Jun, 2015
   summary: >
-    Lead architect for <a href="https://bankiaindicex.com">Bankia Indicex</a>, a public self-assessment platform
-    scoring a website's digital maturity across eight behavioural areas.
-
-    <ul class="resume-item-list">
-    <li>Architected Bankia Indicex, scoring websites across eight digitalization areas &mdash; SEO, usability, content, digital marketing, social networking, web analytics, e-commerce, and mobility &mdash; into a single end-user report</li>
-    <li>Designed the three-stage processing pipeline &mdash; crawler-based extraction of page structure, links, and metadata; parallel enrichment through a thread pool against ~10 third-party APIs (SEMrush, PageSpeed, W3C, Klout, and the major social platforms); and scored report generation &mdash; accounting for rate limits, partial failures, and highly variable source data quality</li>
-    <li>Improved reporting scalability and integration reliability for multi-source analytical workloads, reducing the operational cost of onboarding each additional data source</li>
-    </ul>
-
-    <strong>Environment:</strong> Java &bull; Spring 4 &bull; Spring Data / JPA &bull; REST APIs &bull; AngularJS &bull; MySQL &bull; Web Crawling &bull; Third-Party API Integration
+    Lead architect for <a href="https://bankiaindicex.com">Bankia Indicex</a>, a public website-maturity scoring
+    platform: crawler-based extraction feeding parallel enrichment against ~10 third-party APIs
+    (Java, Spring 4, AngularJS, MySQL).
 
 - company: Trentisa
-  position: Software Consultant
+  position: Software Architect
   duration: Apr, 2010 &mdash; Nov, 2014
   summary: >
-    Delivered architecture and consulting for enterprise banking and financial platforms, ensuring the viability of
-    systems against the business characteristics of each customer and advising on integration strategy and long-term
-    maintainability.
+    Architecture for enterprise banking and SEPA platforms; high-throughput financial data processing with
+    reconciliation and data-integrity constraints under regulatory requirements.
 
-    <ul class="resume-item-list">
-    <li>Delivered architecture solutions for enterprise banking systems, including SEPA-related platforms and financial integrations, working within strict correctness, traceability, and regulatory constraints</li>
-    <li>Designed high-throughput systems for processing large volumes of financial and transactional data, with emphasis on data integrity, reconciliation, and predictable behaviour under batch and peak load</li>
-    <li>Advised stakeholders on scalability, integration strategy, and architectural decision-making for enterprise platforms</li>
-    <li>Collaborated with technical and business teams to deliver resilient and maintainable financial systems</li>
-    </ul>
-
-    <strong>Selected engagements:</strong> SEPA (direct debit, mandates, receipts and transfers), Bank of Santander
-    (bulk processing for mission-critical business operations), LeasePlan (profitability and financial calculation
-    studies).
-
-    <br><br><strong>Environment:</strong> Enterprise Integration &bull; Financial Systems &bull; High-Throughput Processing &bull; Distributed Architectures
+    <br><br><strong>Selected engagements:</strong> SEPA (direct debit, mandates, receipts and transfers),
+    Bank of Santander (bulk processing for mission-critical business operations), LeasePlan (profitability and
+    financial calculation studies).
 
 - company: Virtual Desk
   position: Software Developer
