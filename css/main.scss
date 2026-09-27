@@ -12,3 +12,6 @@
 
 // Layouts
 @import "resume";
+
+// Print / PDF (must come last so it can override screen rules)
+@import "print";
