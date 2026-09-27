@@ -1,6 +1,9 @@
 # Jobs — mirrors the PROFESSIONAL EXPERIENCE / EARLIER EXPERIENCE sections of
-# solutions-architect-resume.md. Entries with a <ul> are the detailed roles; entries with a
-# bare summary line are the compressed tail.
+# solutions-architect-resume.md.
+#
+# Entries WITHOUT `earlier: true` render under "Professional Experience" (detailed, bulleted).
+# Entries WITH `earlier: true` render under "Earlier Experience", which the layout places after
+# "Technical Expertise" — the same order as the source-of-truth resume.
 - company: TUI
   position: Solutions Architect
   duration: Jan, 2017 &mdash; Present
@@ -18,7 +21,7 @@
     <strong>Environment:</strong> Java 21 &bull; Spring Boot 3.5 &bull; AWS ECS Fargate &bull; RDS PostgreSQL &bull; MSK / Apache Kafka &bull; SNS/SQS &bull; Cognito &bull; Terraform &bull; GitLab CI &bull; REST APIs &bull; LeanIX
 
 - company: Hotelbeds
-  position: Applications Architect
+  position: Application Architect
   duration: Sep, 2015 &mdash; Jan, 2017
   summary: >
     <ul class="resume-item-list">
@@ -30,8 +33,9 @@
     <strong>Environment:</strong> Java &bull; Spring &bull; REST APIs &bull; High Availability
 
 - company: Onwhyon
-  position: Applications Architect
+  position: Application Architect
   duration: Nov, 2014 &mdash; Jun, 2015
+  earlier: true
   summary: >
     Lead architect for <a href="https://bankiaindicex.com">Bankia Indicex</a>, a public website-maturity scoring
     platform: crawler-based extraction feeding parallel enrichment against ~10 third-party APIs
@@ -40,6 +44,7 @@
 - company: Trentisa
   position: Software Architect
   duration: Apr, 2010 &mdash; Nov, 2014
+  earlier: true
   summary: >
     Architecture for enterprise banking and SEPA platforms; high-throughput financial data processing with
     reconciliation and data-integrity constraints under regulatory requirements.
@@ -51,6 +56,7 @@
 - company: Virtual Desk
   position: Software Developer
   duration: Sep, 2009 &mdash; Apr, 2010
+  earlier: true
   summary: >
     Distributed architecture solutions, technology selection, and code reviews (ZKOSS, Spring 2.5, Hibernate/JPA,
     Oracle 10g).
@@ -58,17 +64,20 @@
 - company: Everis Spain
   position: Software Developer
   duration: Jan, 2009 &mdash; Sep, 2009
+  earlier: true
   summary: >
     Java application architecture, SOA, Liferay portlets, and data modelling, migration, and warehousing.
 
 - company: OLTP Voice, Caracas
   position: Software Developer
   duration: Jan, 2008 &mdash; Jan, 2009
+  earlier: true
   summary: >
     Middleware for Movistar post-paid transaction and account activation systems.
 
 - company: Imolko, Caracas
   position: Software Developer
   duration: Jan, 2006 &mdash; Jan, 2008
+  earlier: true
   summary: >
     Web and business components for SMS-based platforms (Java, Web Services / SOA, SMPP).

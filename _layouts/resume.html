@@ -49,31 +49,33 @@
       </header>
 
       {% if site.resume_section_experience %}
-      <!-- begin Experience -->
+      <!-- begin Professional Experience -->
       <section class="content-section">
 
         <header class="section-header">
-          <h2>Experience</h2>
+          <h2>Professional Experience</h2>
         </header>
 
         {% for job in site.data.experience %}
+        {% unless job.earlier %}
         <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
           <h3 class="resume-item-title" itemprop="name">{{ job.company }}</h3>
           <h4 class="resume-item-details" itemprop="description">{{ job.position }} &bull; {{ job.duration }}</h4>
           <p class="resume-item-copy">{{ job.summary }}</p>
         </div><!-- end of resume-item -->
+        {% endunless %}
         {% endfor %}
 
       </section>
-      <!-- end Experience -->
+      <!-- end Professional Experience -->
       {% endif %}
 
 
       {% if site.resume_section_projects %}
-      <!-- begin Projects -->
+      <!-- begin Selected Work -->
       <section class="content-section">
         <header class="section-header">
-          <h2>Projects</h2>
+          <h2>Selected Work</h2>
         </header>
 
         {% for project in site.data.projects %}
@@ -86,15 +88,15 @@
         {% endfor %}
 
       </section>
-      <!-- end Projects -->
+      <!-- end Selected Work -->
       {% endif %}
 
       {% if site.resume_section_skills %}
-      <!-- begin Skills -->
+      <!-- begin Technical Expertise -->
       <section class="content-section">
 
         <header class="section-header">
-          <h2>Skills</h2>
+          <h2>Technical Expertise</h2>
         </header>
         {% for skill in site.data.skills %}
         <div class="resume-item">
@@ -104,7 +106,29 @@
         {% endfor %}
 
       </section>
-      <!-- end Skills -->
+      <!-- end Technical Expertise -->
+      {% endif %}
+
+      {% if site.resume_section_earlier_experience %}
+      <!-- begin Earlier Experience -->
+      <section class="content-section">
+
+        <header class="section-header">
+          <h2>Earlier Experience</h2>
+        </header>
+
+        {% for job in site.data.experience %}
+        {% if job.earlier %}
+        <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
+          <h3 class="resume-item-title" itemprop="name">{{ job.company }}</h3>
+          <h4 class="resume-item-details" itemprop="description">{{ job.position }} &bull; {{ job.duration }}</h4>
+          <p class="resume-item-copy">{{ job.summary }}</p>
+        </div><!-- end of resume-item -->
+        {% endif %}
+        {% endfor %}
+
+      </section>
+      <!-- end Earlier Experience -->
       {% endif %}
 
       {% if site.resume_section_education %}
@@ -135,10 +159,10 @@
       {% endif %}
 
       {% if site.resume_section_courses %}
-      <!-- begin Courses -->
+      <!-- begin Certifications & Training -->
       <section class="content-section">
         <header class="section-header">
-          <h2>Courses and Certifications</h2>
+          <h2>Certifications &amp; Training</h2>
         </header>
 
         {% for courses in site.data.courses %}
@@ -149,7 +173,7 @@
         </div>
         {% endfor %}
       </section>
-      <!-- end Courses -->
+      <!-- end Certifications & Training -->
       {% endif %}
 
       {% if site.resume_section_languages %}

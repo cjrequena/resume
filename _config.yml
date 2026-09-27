@@ -46,16 +46,22 @@ resume_looking_for_work:        "yes"
 
 # Decide which sections to use
 # comment out to hide
-resume_section_experience:      true
-resume_section_education:       true
-resume_section_courses:         true
-resume_section_projects:        true
-resume_section_skills:          true
-resume_section_languages:       true
-resume_section_recognition:     false
-resume_section_links:           false
-resume_section_associations:    false
-resume_section_interests:       false
+#
+# Section order follows solutions-architect-resume.md (the source of truth) and is fixed
+# in _layouts/resume.html:
+#   Professional Experience -> Selected Work -> Technical Expertise -> Earlier Experience
+#   -> Education -> Certifications & Training -> Languages
+resume_section_experience:          true   # "Professional Experience" (_data/experience.yml, entries without `earlier: true`)
+resume_section_projects:            true   # "Selected Work" (_data/projects.yml)
+resume_section_skills:              true   # "Technical Expertise" (_data/skills.yml)
+resume_section_earlier_experience:  true   # "Earlier Experience" (_data/experience.yml, entries with `earlier: true`)
+resume_section_education:           true
+resume_section_courses:             true   # "Certifications & Training" (_data/courses.yml)
+resume_section_languages:           true
+resume_section_recognition:         false
+resume_section_links:               false
+resume_section_associations:        false
+resume_section_interests:           false
 
 # Resume social links
 # uncomment the options you wish to display, and add your own URL
