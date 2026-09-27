@@ -25,7 +25,7 @@ Jan 2017 – Present
 * Defined architecture strategy for the global sourcing and integration platforms behind multi-regional travel operations, sizing for high-demand seasonal workloads and setting the scalability and resilience targets delivery teams build against — 99.99% uptime and a 40% improvement in peak-load scalability across business-critical services
 * Led the decomposition of monolithic applications into AWS-native microservices with event-driven integration — service boundaries, ownership model, deployment topology, and automated release paths — cutting deployment time by 60% and improving delivery throughput
 * Established asynchronous messaging standards on Kafka and SNS/SQS — event contracts, consumer isolation, failure handling, and replay — removing synchronous coupling between domains and containing the blast radius of downstream outages
-* Introduced event sourcing as the persistence model for the booking domain — append-only event tables in PostgreSQL with snapshotting and durable subscription offsets, CloudEvents-typed events published to Kafka for downstream distribution — giving a complete audit trail of every booking state transition and letting new read models be projected from history without touching the write side
+* Introduced CQRS with event sourcing as the persistence model for the booking domain — append-only event tables in PostgreSQL with snapshotting and durable subscription offsets, CloudEvents-typed events published to Kafka for downstream distribution — giving a complete audit trail of every booking state transition and letting new read models be projected from history without touching the write side
 * Owned architecture governance adopted across multiple global teams: design reviews, security and development standards, reusable integration patterns, and versioned REST contracts with backward-compatibility rules that let consuming teams evolve independently of provider release cycles — with the application landscape and its dependencies tracked in LeanIX
 * Influenced technical direction across Product, Engineering, Security, and DevOps, translating enterprise strategy into concrete platform decisions and making their operational and security implications explicit to non-technical stakeholders
 * Mentored engineers and architects through design reviews, pairing on architectural decisions, and written guidance
@@ -38,8 +38,8 @@ Jan 2017 – Present
 
 Sep 2015 – Jan 2017
 
-* Designed and scaled backend services processing millions of daily transactions across high-availability travel distribution platforms, sized for peak distribution load, including disaster recovery and data-integrity design
-* Led modernization of legacy systems into modular microservices, defining service decomposition, data ownership, and integration contracts
+* Designed and scaled backend services processing millions of daily transactions across high-availability travel distribution platforms — sized for peak distribution load, disaster recovery, and data-integrity guarantees
+* Led modernization of legacy systems into modular microservices — service decomposition, data ownership, and integration contracts — across the core travel distribution platform
 * Improved platform performance by up to 30% by targeting structural bottlenecks — call topology, data access paths, and caching strategy — rather than isolated code tuning
 
 *Java · Spring · REST APIs · High Availability*
@@ -49,13 +49,14 @@ Sep 2015 – Jan 2017
 # SELECTED WORK
 
 **Jaspe** — multi-tenant SaaS booking and business-management platform for service businesses · jaspe.io
-*Personal platform project: reference architecture and proof-of-concept implementation.*
+*Personal platform project: end-to-end reference implementation — seven-service backend, three Next.js frontends, and AWS infrastructure as Terraform.*
 
-* Designed an eight-service event-driven architecture on Kafka — identity, business, availability, orchestrator, booking, payment, customer, and notification — with explicit criteria separating direct, orchestrated, and event-driven integration
-* Enforced scheduling correctness in PostgreSQL rather than application code: GiST exclusion constraints over `daterange` / `tstzrange` (with `btree_gist` for UUID and enum equality) make overlapping location hours, staff working hours, staff absences, and asset maintenance windows unrepresentable
-* Specified Row-Level Security tenant isolation for the business and availability services, scoping tenants at the database rather than in queries, and built the business service proof of concept in Java / Spring Boot with Flyway-managed migrations
+* Architected a seven-service backend across three deliberate styles chosen per bounded context — Hexagonal (business, customer), CQRS + Event Sourcing (booking command/query handlers, backed by a custom event-store library published as a versioned artifact to a private Maven registry), and Layered (auth, payment, notification) — integrated via synchronous REST and CloudEvents-typed Kafka events with per-consumer DLQs and replay
+* Enforced correctness in PostgreSQL rather than application code: GiST exclusion constraints over `daterange` / `tstzrange` (with `btree_gist` for UUID/enum equality) make overlapping location hours, staff schedules, and asset bookings unrepresentable, alongside Row-Level Security tenant isolation rolled out across every service and pinned with per-service regression tests
+* Owned the identity and authorization boundary end-to-end: Cognito User Pool with three Lambda triggers (post-confirmation provisioning, pre-token-generation claim enrichment, pre-signup federation), a Cognito JWT authorizer at the API Gateway edge, and claim-based method authorization inside each service
+* Defined the delivery topology as Terraform (API Gateway → VPC Link → internal ALB → ECS Fargate, multi-account, `eu-west-1`) shipped through GitLab CI parent/child pipelines gated on per-service change detection, and delivered three Next.js frontends (business, platform-admin, patient-facing) sharing one backend through a Stripe Connect payment integration
 
-*Java · Spring Boot · PostgreSQL · Apache Kafka · Flyway · Hexagonal Architecture · Multi-Tenant SaaS*
+*Java 21 · Spring Boot 3.5 · PostgreSQL (RLS, GiST) · Apache Kafka (CloudEvents) · AWS (ECS Fargate, API Gateway, Cognito, Lambda) · Terraform · Next.js / TypeScript · Stripe Connect · GitLab CI · Hexagonal · CQRS / Event Sourcing · Multi-Tenant SaaS*
 
 ---
 

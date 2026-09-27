@@ -9,7 +9,7 @@
     <li>Defined architecture strategy for the global sourcing and integration platforms behind multi-regional travel operations, sizing for high-demand seasonal workloads and setting the scalability and resilience targets delivery teams build against &mdash; 99.99% uptime and a 40% improvement in peak-load scalability across business-critical services</li>
     <li>Led the decomposition of monolithic applications into AWS-native microservices with event-driven integration &mdash; service boundaries, ownership model, deployment topology, and automated release paths &mdash; cutting deployment time by 60% and improving delivery throughput</li>
     <li>Established asynchronous messaging standards on Kafka and SNS/SQS &mdash; event contracts, consumer isolation, failure handling, and replay &mdash; removing synchronous coupling between domains and containing the blast radius of downstream outages</li>
-    <li>Introduced event sourcing as the persistence model for the booking domain &mdash; append-only event tables in PostgreSQL with snapshotting and durable subscription offsets, CloudEvents-typed events published to Kafka for downstream distribution &mdash; giving a complete audit trail of every booking state transition and letting new read models be projected from history without touching the write side</li>
+    <li>Introduced CQRS with event sourcing as the persistence model for the booking domain &mdash; append-only event tables in PostgreSQL with snapshotting and durable subscription offsets, CloudEvents-typed events published to Kafka for downstream distribution &mdash; giving a complete audit trail of every booking state transition and letting new read models be projected from history without touching the write side</li>
     <li>Owned architecture governance adopted across multiple global teams: design reviews, security and development standards, reusable integration patterns, and versioned REST contracts with backward-compatibility rules that let consuming teams evolve independently of provider release cycles &mdash; with the application landscape and its dependencies tracked in LeanIX</li>
     <li>Influenced technical direction across Product, Engineering, Security, and DevOps, translating enterprise strategy into concrete platform decisions and making their operational and security implications explicit to non-technical stakeholders</li>
     <li>Mentored engineers and architects through design reviews, pairing on architectural decisions, and written guidance</li>
@@ -22,8 +22,8 @@
   duration: Sep, 2015 &mdash; Jan, 2017
   summary: >
     <ul class="resume-item-list">
-    <li>Designed and scaled backend services processing millions of daily transactions across high-availability travel distribution platforms, sized for peak distribution load, including disaster recovery and data-integrity design</li>
-    <li>Led modernization of legacy systems into modular microservices, defining service decomposition, data ownership, and integration contracts</li>
+    <li>Designed and scaled backend services processing millions of daily transactions across high-availability travel distribution platforms &mdash; sized for peak distribution load, disaster recovery, and data-integrity guarantees</li>
+    <li>Led modernization of legacy systems into modular microservices &mdash; service decomposition, data ownership, and integration contracts &mdash; across the core travel distribution platform</li>
     <li>Improved platform performance by up to 30% by targeting structural bottlenecks &mdash; call topology, data access paths, and caching strategy &mdash; rather than isolated code tuning</li>
     </ul>
 

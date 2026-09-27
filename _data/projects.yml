@@ -4,13 +4,15 @@
   duration: Personal platform project
   url: "https://jaspe.io"
   description: >
-    Multi-tenant SaaS booking and business-management platform for service-based businesses &mdash; reference
-    architecture and proof-of-concept implementation.
+    Multi-tenant SaaS booking and business-management platform for service businesses &mdash; end-to-end
+    reference implementation: seven-service backend, three Next.js frontends, and AWS infrastructure as
+    Terraform.
 
     <ul class="resume-item-list">
-    <li>Designed an eight-service event-driven architecture on Kafka &mdash; identity, business, availability, orchestrator, booking, payment, customer, and notification &mdash; with explicit criteria separating direct, orchestrated, and event-driven integration</li>
-    <li>Enforced scheduling correctness in PostgreSQL rather than application code: GiST exclusion constraints over <code>daterange</code> / <code>tstzrange</code> (with <code>btree_gist</code> for UUID and enum equality) make overlapping location hours, staff working hours, staff absences, and asset maintenance windows unrepresentable</li>
-    <li>Specified Row-Level Security tenant isolation for the business and availability services, scoping tenants at the database rather than in queries, and built the business service proof of concept in Java / Spring Boot with Flyway-managed migrations</li>
+    <li>Architected a seven-service backend across three deliberate styles chosen per bounded context &mdash; Hexagonal (business, customer), CQRS + Event Sourcing (booking command/query handlers, backed by a custom event-store library published as a versioned artifact to a private Maven registry), and Layered (auth, payment, notification) &mdash; integrated via synchronous REST and CloudEvents-typed Kafka events with per-consumer DLQs and replay</li>
+    <li>Enforced correctness in PostgreSQL rather than application code: GiST exclusion constraints over <code>daterange</code> / <code>tstzrange</code> (with <code>btree_gist</code> for UUID/enum equality) make overlapping location hours, staff schedules, and asset bookings unrepresentable, alongside Row-Level Security tenant isolation rolled out across every service and pinned with per-service regression tests</li>
+    <li>Owned the identity and authorization boundary end-to-end: Cognito User Pool with three Lambda triggers (post-confirmation provisioning, pre-token-generation claim enrichment, pre-signup federation), a Cognito JWT authorizer at the API Gateway edge, and claim-based method authorization inside each service</li>
+    <li>Defined the delivery topology as Terraform (API Gateway &rarr; VPC Link &rarr; internal ALB &rarr; ECS Fargate, multi-account, <code>eu-west-1</code>) shipped through GitLab CI parent/child pipelines gated on per-service change detection, and delivered three Next.js frontends (business, platform-admin, patient-facing) sharing one backend through a Stripe Connect payment integration</li>
     </ul>
 
-    <strong>Environment:</strong> Java &bull; Spring Boot &bull; PostgreSQL &bull; Apache Kafka &bull; Flyway &bull; Hexagonal Architecture &bull; Multi-Tenant SaaS
+    <strong>Environment:</strong> Java 21 &bull; Spring Boot 3.5 &bull; PostgreSQL (RLS, GiST) &bull; Apache Kafka (CloudEvents) &bull; AWS (ECS Fargate, API Gateway, Cognito, Lambda) &bull; Terraform &bull; Next.js / TypeScript &bull; Stripe Connect &bull; GitLab CI &bull; Hexagonal &bull; CQRS / Event Sourcing &bull; Multi-Tenant SaaS
