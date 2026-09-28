@@ -25,12 +25,11 @@ display_header_contact_info:    "false"
 
 resume_header_intro:
   "<p>
-  Solutions Architect with 15+ years in enterprise environments, hands-on across the full architectural stack:
-  event-driven and event-sourced distributed systems, CQRS and hexagonal service design, multi-tenant SaaS platforms
-  with database-enforced tenant isolation, and AWS environments defined entirely as code across a multi-account
-  organization. Equally comfortable setting the standard and writing the reference implementation &mdash; API contracts,
-  messaging semantics, deployment topology, identity and authorization models, and the CI/CD pipelines that carry them
-  to production.
+  Solutions Architect with 15+ years in enterprise environments, working across the full architectural stack
+  &mdash; from event-driven distributed systems and multi-tenant platform design to AWS environments defined
+  entirely as code across a multi-account organization. Equally comfortable setting the standard and writing
+  the reference implementation: API contracts, messaging semantics, deployment topology, identity and
+  authorization models, and the CI/CD pipelines that carry them to production.
   </p>
   <p>
   <strong>Core stack</strong> &mdash; Java 21 / Spring Boot 3.5 &bull; AWS (ECS Fargate, RDS PostgreSQL, MSK, Cognito)

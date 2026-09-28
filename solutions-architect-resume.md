@@ -23,14 +23,15 @@ Solutions Architect with 15+ years in enterprise environments, working across th
 Jan 2017 – Present
 
 * Defined architecture strategy for the global sourcing and integration platforms behind multi-regional travel operations, sizing for high-demand seasonal workloads and setting the scalability and resilience targets delivery teams build against — 99.99% uptime and a 40% improvement in peak-load scalability across business-critical services
-* Led the decomposition of monolithic applications into AWS-native microservices with event-driven integration — service boundaries, ownership model, deployment topology, and automated release paths — cutting deployment time by 60% and improving delivery throughput
-* Established asynchronous messaging standards on Kafka and SNS/SQS — event contracts, consumer isolation, failure handling, and replay — removing synchronous coupling between domains and containing the blast radius of downstream outages
-* Introduced CQRS with event sourcing as the persistence model for the booking domain — append-only event tables in PostgreSQL with snapshotting and durable subscription offsets, CloudEvents-typed events published to Kafka for downstream distribution — giving a complete audit trail of every booking state transition and letting new read models be projected from history without touching the write side
+* Led the decomposition of a monolithic booking platform into a set of independently deployable, reactive Java/Spring Boot services with event-driven integration — service boundaries, ownership model, deployment topology, and automated release paths — cutting deployment time by 60% and improving delivery throughput, while consolidating over a dozen regional brand storefronts onto a single whitelabel frontend
+* Established asynchronous messaging standards on Kafka and SNS/SQS — event contracts, consumer isolation, failure handling, and replay — removing synchronous coupling between domains and containing the blast radius of downstream outages; applied this to federate real-time availability search across multiple external and internal suppliers, streaming results to clients as they arrive rather than blocking on the slowest supplier
+* Introduced CQRS as the persistence model for the ancillary booking-lifecycle domain — an independently scaled command service handling writes and a query service serving reads from a document store, with domain events typed and versioned through a dedicated schema registry and AsyncAPI contracts — letting read and write paths scale independently while keeping downstream consumers aligned on event shape across versions
 * Owned architecture governance adopted across multiple global teams: design reviews, security and development standards, reusable integration patterns, and versioned REST contracts with backward-compatibility rules that let consuming teams evolve independently of provider release cycles — with the application landscape and its dependencies tracked in LeanIX
+* Defined the API gateway strategy for externally consumed services on Apigee — OAuth2 token verification and CORS policy standardized across the proxy layer so internal services never expose public endpoints directly — and led the phased migration of the proxy estate from Apigee Edge to Apigee X across test, pre-prod, and production for consumers spanning partner integrations and the mobile app team
 * Influenced technical direction across Product, Engineering, Security, and DevOps, translating enterprise strategy into concrete platform decisions and making their operational and security implications explicit to non-technical stakeholders
 * Mentored engineers and architects through design reviews, pairing on architectural decisions, and written guidance
 
-*Java 21 · Spring Boot 3.5 · AWS ECS Fargate · RDS PostgreSQL · MSK / Apache Kafka · SNS/SQS · Cognito · Terraform · GitLab CI · REST APIs · LeanIX*
+*Java 17/21 · Spring Boot 3.x (WebFlux) · AWS ECS Fargate · RDS PostgreSQL · DocumentDB · MSK / Apache Kafka · SNS/SQS · Cognito · Apigee (Edge → X migration) · Terraform · GitLab CI · REST APIs · LeanIX*
 
 ---
 
@@ -55,8 +56,9 @@ Sep 2015 – Jan 2017
 * Enforced correctness in PostgreSQL rather than application code: GiST exclusion constraints over `daterange` / `tstzrange` (with `btree_gist` for UUID/enum equality) make overlapping location hours, staff schedules, and asset bookings unrepresentable, alongside Row-Level Security tenant isolation rolled out across every service and pinned with per-service regression tests
 * Owned the identity and authorization boundary end-to-end: Cognito User Pool with three Lambda triggers (post-confirmation provisioning, pre-token-generation claim enrichment, pre-signup federation), a Cognito JWT authorizer at the API Gateway edge, and claim-based method authorization inside each service
 * Defined the delivery topology as Terraform (API Gateway → VPC Link → internal ALB → ECS Fargate, multi-account, `eu-west-1`) shipped through GitLab CI parent/child pipelines gated on per-service change detection, and delivered three Next.js frontends (business, platform-admin, patient-facing) sharing one backend through a Stripe Connect payment integration
+* Directed the majority of implementation through Claude Code and Kiro as AI coding agents rather than hand-writing it — authoring the machine-readable architecture contracts (workflow, model-routing, naming/wire-format, git conventions) that let agents work correctly without step-by-step supervision, plus Kiro hooks that auto-detect architecture-documentation drift on every commit — with over half of all commits across the platform AI-co-authored and every agent-produced change reviewed against the reference architecture before merge
 
-*Java 21 · Spring Boot 3.5 · PostgreSQL (RLS, GiST) · Apache Kafka (CloudEvents) · AWS (ECS Fargate, API Gateway, Cognito, Lambda) · Terraform · Next.js / TypeScript · Stripe Connect · GitLab CI · Hexagonal · CQRS / Event Sourcing · Multi-Tenant SaaS*
+*Java 21 · Spring Boot 3.5 · PostgreSQL (RLS, GiST) · Apache Kafka (CloudEvents) · AWS (ECS Fargate, API Gateway, Cognito, Lambda) · Terraform · Next.js / TypeScript · Stripe Connect · GitLab CI · Hexagonal · CQRS / Event Sourcing · Multi-Tenant SaaS · Claude Code / Kiro (AI-Agent-Directed Engineering)*
 
 ---
 
@@ -73,6 +75,10 @@ ECS Fargate • API Gateway • Lambda • RDS PostgreSQL & RDS Proxy • Elasti
 ### Engineering, Data & Security
 
 Java 21 • Spring Boot 3.5 (Cloud Stream, Security / OAuth2 Resource Server, Data JPA) • Python • TypeScript • Next.js (App Router, SSR / RSC) • React • OpenAPI • Micrometer & Distributed Tracing • PostgreSQL (Row-Level Security, GiST exclusion constraints, PostGIS, transaction-scoped tenant context) • Event Store Design (append-only log, snapshots, durable subscription offsets) • Apache Kafka • CloudEvents • Dead-Letter Queues & Replay • Flyway • OAuth 2.0 / OIDC • RBAC & Claim-Based Authorization • Least-Privilege IAM • GDPR / EU Regulatory Assessment • JUnit 5 • Mockito • Testcontainers • Property-Based Testing • Playwright • Locust • SonarQube • arc42, C4, Mermaid
+
+### AI-Assisted & Agentic Engineering
+
+Claude Code (agent-instruction contracts, custom skills, slash-command scaffolds, sub-agent model routing) • Kiro (spec/hook-driven agents, automated architecture-doc-coherence enforcement) • LLM-Based Pair Programming & Code Review • Prompt/Role Engineering for Domain-Specific AI Agents • Agentic Workflow Governance (plan-then-execute, human-in-the-loop review) • Multi-Repo AI-Directed Delivery at Scale
 
 ---
 

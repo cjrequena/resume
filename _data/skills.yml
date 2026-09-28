@@ -29,3 +29,10 @@
     RBAC &amp; Claim-Based Authorization &bull; Least-Privilege IAM &bull; GDPR / EU Regulatory Assessment &bull;
     JUnit 5 &bull; Mockito &bull; Testcontainers &bull; Property-Based Testing &bull; Playwright &bull; Locust &bull;
     SonarQube &bull; arc42, C4, Mermaid
+
+- skill: AI-Assisted &amp; Agentic Engineering
+  description: >
+    Claude Code (agent-instruction contracts, custom skills, slash-command scaffolds, sub-agent model routing) &bull;
+    Kiro (spec/hook-driven agents, automated architecture-doc-coherence enforcement) &bull;
+    LLM-Based Pair Programming &amp; Code Review &bull; Prompt/Role Engineering for Domain-Specific AI Agents &bull;
+    Agentic Workflow Governance (plan-then-execute, human-in-the-loop review) &bull; Multi-Repo AI-Directed Delivery at Scale
